@@ -248,3 +248,30 @@ test('can merge an arbitrary number of objects', t => {
 
   t.deepEqual(merge(src1, src2, src3, src4), expected);
 });
+
+test('test for readme example', t => {
+  const obj1 = {
+    key1: /abc/,
+    key2: [1, 2, 3],
+    key3: { key4: 'hello' },
+  };
+
+  const obj2 = {
+    key1: /efg/,
+    key2: [4, 5, 6],
+    key3: { key5: 'bye' },
+  };
+
+  const obj3 = { key99: "i'm extra" };
+
+  const expected = {
+    key1: /efg/,
+    key2: [1, 2, 3, 4, 5, 6],
+    key3: { key4: 'hello', key5: 'bye' },
+    key99: "i'm extra",
+  };
+
+  const merged = merge(obj1, obj2, obj3);
+
+  t.deepEqual(merged, expected);
+});
