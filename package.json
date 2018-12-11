@@ -4,9 +4,10 @@
   "description": "Utility functions",
   "main": "dist/main.cjs.js",
   "module": "dist/main.es.js",
+  "browser": "dist/main.umd.js",
   "scripts": {
     "build": "rollup -c",
-    "lint": "eslint 'src/**' 'test/*.js'",
+    "lint": "eslint 'src/**' 'tests/*.js'",
     "test": "yarn lint && ava --verbose",
     "test:watch": "ava --verbose --watch",
     "test:cov": "yarn lint && nyc ava"
@@ -34,9 +35,7 @@
     "ts-node": "^7.0.1",
     "tslib": "^1.9.3",
     "typescript": "^3.2.1",
-    "typescript-eslint-parser": "^21.0.2"
-  },
-  "dependencies": {
+    "typescript-eslint-parser": "^21.0.2",
     "rollup": "^0.67.4",
     "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-plugin-typescript": "^1.0.0"

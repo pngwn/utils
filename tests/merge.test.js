@@ -225,3 +225,26 @@ test('should overwrite values when property is initialised but undefined', t => 
   hasUndefinedProperty(merge(target2, src));
   hasUndefinedProperty(merge(target3, src));
 });
+
+test('can merge an arbitrary number of objects', t => {
+  const src1 = { key1: 'monday' };
+  const src2 = { key2: 'tuesday' };
+  const src3 = { key3: 'thursday' };
+  const src4 = {
+    key2: 'hoolabaloola',
+    key4: {
+      key5: 'hi-dee-hoo',
+    },
+  };
+
+  const expected = {
+    key1: 'monday',
+    key2: 'hoolabaloola',
+    key3: 'thursday',
+    key4: {
+      key5: 'hi-dee-hoo',
+    },
+  };
+
+  t.deepEqual(merge(src1, src2, src3, src4), expected);
+});
