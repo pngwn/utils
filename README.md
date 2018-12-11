@@ -7,11 +7,11 @@ They don't handle all edge cases but are mostly sufficient.
 ## Install
 
 ```bash
-yarn add futilities
+yarn add @pngwn/utils
 
 # or
 
-npm i futilities
+npm i @pngwn/utils
 ```
 
 ## functions
@@ -23,7 +23,7 @@ npm i futilities
 Deep merge for objects (not arrays). Can take many objects as parameters. Concatenates arrays, treats Date and RegExp as primitives. Immutable. Returns an object.
 
 ```js
-import { merge } from 'futilities';
+import { merge } from '@pngwn/utils';
 
 const obj1 = {
   key1: /abc/,
@@ -39,7 +39,7 @@ const obj2 = {
 
 const obj3  { key99: 'i\'m extra' }
 
-// obj3 overwrites obj2 which overwrites obj1 when merges are not possible
+// when merges are not possible: `obj3` overwrites `obj2` which overwrites `obj1`
 const merged = merge(obj1, obj2, obj3);
 
 merged === {
