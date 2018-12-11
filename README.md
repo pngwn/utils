@@ -16,6 +16,9 @@ npm i @pngwn/utils
 
 ## functions
 
+- [merge](#merge) - deep merge for objects
+- [once](#once) - call a function only once
+
 ### `merge`
 
 `merge(obj1, obj2, obj3, ...)`
@@ -50,4 +53,26 @@ merged === {
 };
 
 // check the tests for more examples/ information on what it can do
+```
+
+### once
+
+`once(callback)`
+
+Makes a function callable only once. Accepts a function as an argument. Subsequent calls to the function return the initial value which is stored after the first invocation.
+
+```js
+import { once } from '@pngwn/utils';
+
+let count = 0;
+const inc = once(() => count++);
+inc(); // count === 1
+inc(); // count === 1
+
+const upper = once(str => str.toUpperCase());
+const firstCall = upper('hello'); // 'HELLO'
+const secondCall = upper('bejeesus'); // 'HELLO'
+
+const error = once(undefined);
+// Error: 'Expected a function, instead got: undefined'
 ```
