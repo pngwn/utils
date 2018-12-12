@@ -2,7 +2,7 @@
 
 Simple utility functions for when you need a simple utility function. Tree shakeable and stuff.
 
-They don't handle all edge cases but are mostly sufficient.
+They don't handle all edge cases but are mostly sufficient. I add them as I need them.
 
 ## Install
 
@@ -16,6 +16,7 @@ npm i @pngwn/utils
 
 ## functions
 
+- [debounce](#debounce) - squish multiple function calls into one
 - [merge](#merge) - deep merge for objects.
 - [once](#once) - call a function only once.
 
