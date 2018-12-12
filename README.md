@@ -16,8 +16,8 @@ npm i @pngwn/utils
 
 ## functions
 
-- [merge](#merge) - deep merge for objects
-- [once](#once) - call a function only once
+- [merge](#merge) - deep merge for objects.
+- [once](#once) - call a function only once.
 
 ### `merge`
 

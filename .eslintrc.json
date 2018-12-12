@@ -16,7 +16,7 @@
     "no-unreachable": 2,
     "valid-typeof": 2,
     "quote-props": [2, "as-needed"],
-    "one-var": [2, "never"],
+    "one-var": 0,
     "prefer-arrow-callback": 2,
     "prefer-const": [2, { "destructuring": "all" }],
     "arrow-spacing": 2,
@@ -41,7 +41,7 @@
     "plugin:import/errors",
     "plugin:import/warnings"
   ],
-  "plugins": [ "ava", "typescript", "import"],
+  "plugins": ["ava", "typescript", "import"],
   "parser": "typescript-eslint-parser",
   "parserOptions": {
     "ecmaVersion": 6,

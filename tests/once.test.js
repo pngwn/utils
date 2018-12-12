@@ -42,7 +42,7 @@ test('subsequent calls should return the original return value', t => {
   t.is(called, 'HELLO');
 });
 
-test('callback must be a function or it will throw', t => {
+test('first argument must be a function or it will throw', t => {
   t.plan(7);
   t.throws(() => once(undefined));
   t.throws(() => once(null));
