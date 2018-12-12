@@ -19,6 +19,27 @@ npm i @pngwn/utils
 - [merge](#merge) - deep merge for objects.
 - [once](#once) - call a function only once.
 
+### debounce
+
+`debounce(callback, waitTime, callImmediately)`
+
+Squishes multiple function calls into one if those calls are within `n` milliseconds. Accepts 3 arguments: a function, a time in milliseconds and a boolean. The boolean dictates whether or not the function should be called immediately on first invocation. Returns a function.
+
+```js
+import { debounce } from '@pngwn/utils';
+
+let count = 0;
+const inc = debounce(() => count++, 50, true);
+
+inc(); // count === 1
+inc(); // count === 1
+inc(); // count === 1
+// wait 50ms: `count === 2`
+
+const error = debounce(undefined);
+// Error: Expected a function, instead got: undefined
+```
+
 ### `merge`
 
 `merge(obj1, obj2, obj3, ...)`
@@ -59,7 +80,7 @@ merged === {
 
 `once(callback)`
 
-Makes a function callable only once. Accepts a function as an argument. Subsequent calls to the function return the initial value which is stored after the first invocation.
+Makes a function callable only once. Accepts a function as an argument. Subsequent calls to the function return the initial value which is stored after the first invocation. Returns a function.
 
 ```js
 import { once } from '@pngwn/utils';
