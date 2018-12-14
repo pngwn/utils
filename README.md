@@ -17,6 +17,7 @@ npm i @pngwn/utils
 - [debounce](#debounce) - squish multiple function calls into one
 - [merge](#merge) - deep merge for objects.
 - [once](#once) - call a function only once.
+- [throttle](#throttle) - call a fuction nor more than every x ms
 
 ### `debounce`
 
@@ -95,4 +96,27 @@ const secondCall = upper('bejeesus'); // 'HELLO'
 
 const error = once(undefined);
 // Error: 'Expected a function, instead got: undefined'
+```
+
+### `throttle`
+
+`throttle`(callbackFn, interval, callImmediately)`
+
+Ensures a function is called no more than every n ms. Accepts 3 arguments: a function, a time in milliseconds and a boolean. The boolean dictates whether or not the function should be called immediately on first invocation. Only the Only the first argument(`callbackFn`) is required. Returns a function.
+
+```js
+import { throttle } from '@pngwn/utils';
+
+let count = 0;
+const inc = throttle(() => count++, 50, true);
+
+// the boolean casued the function to be called immediately, then the timer starts
+// omitting it will cause the function to fire at the end of the timer
+
+inc(); // count === 1
+inc(); // count === 1
+inc(); // count === 1
+
+const error = throttle(undefined);
+// Error: Expected a function, instead got: undefined
 ```
