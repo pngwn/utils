@@ -32,14 +32,14 @@
     "nyc": "^13.1.0",
     "prettier": "^1.15.3",
     "prettier-eslint": "^8.8.2",
+    "rollup": "^0.67.4",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-typescript": "^1.0.0",
     "ts-lib": "^0.0.5",
     "ts-node": "^7.0.1",
     "tslib": "^1.9.3",
     "typescript": "^3.2.1",
-    "typescript-eslint-parser": "^21.0.2",
-    "rollup": "^0.67.4",
-    "rollup-plugin-node-resolve": "^3.4.0",
-    "rollup-plugin-typescript": "^1.0.0"
+    "typescript-eslint-parser": "^21.0.2"
   },
   "publishConfig": {
     "access": "public"
