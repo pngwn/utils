@@ -110,7 +110,7 @@ import { throttle } from '@pngwn/utils';
 let count = 0;
 const inc = throttle(() => count++, 50, true);
 
-// the boolean casued the function to be called immediately, then the timer starts
+// the boolean causes the function to be called immediately, then the timer starts
 // omitting it will cause the function to fire at the end of the timer
 
 inc(); // count === 1
