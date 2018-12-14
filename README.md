@@ -1,16 +1,14 @@
-# futilities
+# utils
 
-Simple utility functions for when you need a simple utility function. Tree shakeable and stuff.
+Simple utility functions for when you need a simple utility function. Tree shakeable, TS definitions and stuff.
 
-They don't handle all edge cases but are mostly sufficient. I add them as I need them.
+They don't handle all edge cases but are mostly sufficient. Tests will give tell you what each function is supposed to cover. I add them as I need them.
 
 ## Install
 
 ```bash
 yarn add @pngwn/utils
-
 # or
-
 npm i @pngwn/utils
 ```
 
@@ -20,11 +18,11 @@ npm i @pngwn/utils
 - [merge](#merge) - deep merge for objects.
 - [once](#once) - call a function only once.
 
-### debounce
+### `debounce`
 
-`debounce(callback, waitTime, callImmediately)`
+`debounce(callbackFn, waitTime = 0, callImmediately = false)`
 
-Squishes multiple function calls into one if those calls are within `n` milliseconds. Accepts 3 arguments: a function, a time in milliseconds and a boolean. The boolean dictates whether or not the function should be called immediately on first invocation. Returns a function.
+Squishes multiple function calls into one if those calls are within `n` milliseconds. Accepts 3 arguments: a function, a time in milliseconds and a boolean. The boolean dictates whether or not the function should be called immediately on first invocation. Only the Only the first argument(`callbackFn`) is required. Returns a function.
 
 ```js
 import { debounce } from '@pngwn/utils';
@@ -77,9 +75,9 @@ merged === {
 // check the tests for more examples/ information on what it can do
 ```
 
-### once
+### `once`
 
-`once(callback)`
+`once(callbackFn)`
 
 Makes a function callable only once. Accepts a function as an argument. Subsequent calls to the function return the initial value which is stored after the first invocation. Returns a function.
 

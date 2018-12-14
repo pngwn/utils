@@ -1,14 +1,7 @@
 import test from 'ava';
-import { debounce } from '../src/debounce';
+import { delay } from './_helper';
 
-async function delay(ms, fn) {
-  return new Promise(res => {
-    setTimeout(() => {
-      if (fn) fn();
-      res();
-    }, ms);
-  });
-}
+import { debounce } from '../src/debounce';
 
 test('returns a function', t => {
   t.is(typeof debounce(() => {}), 'function');
