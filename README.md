@@ -100,7 +100,7 @@ const error = once(undefined);
 
 ### `throttle`
 
-`throttle`(callbackFn, interval, callImmediately)`
+`throttle(callbackFn, interval = 0, callImmediately = false)`
 
 Ensures a function is called no more than every n ms. Accepts 3 arguments: a function, a time in milliseconds and a boolean. The boolean dictates whether or not the function should be called immediately on first invocation. Only the Only the first argument(`callbackFn`) is required. Returns a function.
 
@@ -110,7 +110,7 @@ import { throttle } from '@pngwn/utils';
 let count = 0;
 const inc = throttle(() => count++, 50, true);
 
-// the boolean casued the function to be called immediately, then the timer starts
+// the boolean causes the function to be called immediately, then the timer starts
 // omitting it will cause the function to fire at the end of the timer
 
 inc(); // count === 1
