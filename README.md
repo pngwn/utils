@@ -100,7 +100,7 @@ const error = once(undefined);
 
 ### `throttle`
 
-`throttle`(callbackFn, interval, callImmediately)`
+`throttle(callbackFn, interval = 0, callImmediately = false)`
 
 Ensures a function is called no more than every n ms. Accepts 3 arguments: a function, a time in milliseconds and a boolean. The boolean dictates whether or not the function should be called immediately on first invocation. Only the Only the first argument(`callbackFn`) is required. Returns a function.
 
