@@ -1,6 +1,6 @@
 {
   "name": "@pngwn/utils",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Simple utility functions for when you need a simple utility function.",
   "main": "dist/main.cjs.js",
   "module": "dist/main.es.js",
