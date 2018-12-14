@@ -1,7 +1,7 @@
 {
-  "name": "futilities",
-  "version": "0.1.0",
-  "description": "Utility functions",
+  "name": "@pngwn/utils",
+  "version": "0.0.0",
+  "description": "Simple utility functions for when you need a simple utility function.",
   "main": "dist/main.cjs.js",
   "module": "dist/main.es.js",
   "browser": "dist/main.umd.js",
@@ -10,7 +10,8 @@
     "lint": "eslint 'src/**' 'tests/*.js'",
     "test": "yarn lint && ava --verbose",
     "test:watch": "ava --verbose --watch",
-    "test:cov": "yarn lint && nyc ava"
+    "test:cov": "yarn lint && nyc ava",
+    "prepublishOnly": "yarn build"
   },
   "keywords": [
     "utilities"
@@ -39,6 +40,9 @@
     "rollup": "^0.67.4",
     "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-plugin-typescript": "^1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "nyc": {
     "include": [
